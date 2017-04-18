@@ -75,7 +75,7 @@ const annon = function annon( method ){
 		return false;
 	}
 
-	if( !kein( "name", method ) || falzy( method.name ) ||
+	if( !kein( "name", method ) || falzy( method.name ) || !protype( method.name, STRING ) ||
 		falzy( stringe( method ).match( FUNCTION_NAME_PATTERN )[ 1 ] ) )
 	{
 		return true;

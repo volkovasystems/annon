@@ -1,6 +1,6 @@
 {
   "name": "annon",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Checks if function is anonymous.",
   "main": "annon.deploy.js",
   "support": "annon.support.js",
