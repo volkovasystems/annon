@@ -48,19 +48,15 @@
               	@include:
               		{
               			"falzy": "falzy",
-              			"kein": "kein",
-              			"protype": "protype",
-              			"stringe": "stringe"
+              			"fnamed": "fnamed",
+              			"protype": "protype"
               		}
               	@end-include
               */
 
 var falzy = require("falzy");
-var kein = require("kein");
+var fnamed = require("fnamed");
 var protype = require("protype");
-var stringe = require("stringe");
-
-var FUNCTION_NAME_PATTERN = /^function\s*([a-zA-Z_][a-zA-Z0-9_]*)?\s*\(.*?\)\s*\{.*?\}$/m;
 
 var annon = function annon(method) {
 	/*;
@@ -75,13 +71,7 @@ var annon = function annon(method) {
 		return false;
 	}
 
-	if (!kein("name", method) || falzy(method.name) || !protype(method.name, STRING) ||
-	falzy(stringe(method).match(FUNCTION_NAME_PATTERN)[1]))
-	{
-		return true;
-	}
-
-	return false;
+	return fnamed(method) === false;
 };
 
 module.exports = annon;
