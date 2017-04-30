@@ -62,12 +62,19 @@ var annon = function annon(method) {
 	/*;
                                     	@meta-configuration:
                                     		{
-                                    			"method:required": "function"
+                                    			"method:required": [
+                                    				"function",
+                                    				"string"
+                                    			]
                                     		}
                                     	@end-meta-configuration
                                     */
 
-	if (falzy(method) || !protype(method, FUNCTION)) {
+	if (protype(method, STRING) && falzy(method)) {
+		return true;
+	}
+
+	if (falzy(method) || !protype(method, FUNCTION + STRING)) {
 		return false;
 	}
 
