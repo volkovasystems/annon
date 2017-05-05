@@ -34,6 +34,9 @@
 			"file": "annon.js",
 			"module": "annon",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/annon.git",
 			"test": "annon-test.js",
