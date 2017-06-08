@@ -1,6 +1,6 @@
 {
   "name": "annon",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Checks if function is anonymous.",
   "main": "annon.js",
   "support": "annon.support.js",
@@ -31,9 +31,9 @@
   "homepage": "https://github.com/volkovasystems/annon#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "falzy": "^0.19.0",
-    "fnamed": "^0.8.0",
-    "protype": "^0.21.0"
+    "falzy": "^0.20.0",
+    "fnamed": "^0.9.0",
+    "protype": "^0.22.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -41,6 +41,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.1"
+    "webpack": "^2.6.1"
   }
 }
