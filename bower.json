@@ -1,12 +1,13 @@
 {
   "name": "annon",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Checks if function is anonymous.",
   "main": "annon.deploy.js",
   "support": "annon.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -25,7 +26,7 @@
   ],
   "dependencies": {
     "falzy": "^0.20.0",
-    "fnamed": "^0.9.0",
+    "fnamed": "^0.10.0",
     "protype": "^0.22.0"
   }
 }
