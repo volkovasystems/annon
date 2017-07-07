@@ -1,8 +1,34 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./annon.deploy.js">
-		</script>
+		<title>annon unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./annon.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "annon unit test", function( assert ) {
+
+				assert.equal( annon( function( ){ } ), true, "should be true" );
+
+				assert.equal( annon( ( ) => { } ), true, "should be true" );
+
+				assert.equal( annon( "" ), true, "should be true" );
+
+				assert.equal( annon( function hello( ){ } ), false, "should be false" );
+
+				assert.equal( annon( "test" ), false, "should be false" );
+				
+			} );
+		</script>
+	</body>
 </html>
