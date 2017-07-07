@@ -34,10 +34,11 @@
 			"file": "annon.js",
 			"module": "annon",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/annon.git",
 			"test": "annon-test.js",
 			"global": true
@@ -73,7 +74,7 @@ const annon = function annon( method ){
 		@end-meta-configuration
 	*/
 
-	if( protype( method, STRING ) && falzy( method ) ){
+	if( typeof method == STRING && falzy( method ) ){
 		return true;
 	}
 
