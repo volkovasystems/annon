@@ -74,7 +74,7 @@ const annon = function annon( method ){
 		@end-meta-configuration
 	*/
 
-	if( typeof method == STRING && falzy( method ) ){
+	if( falzy( method ) && typeof method == "string" ){
 		return true;
 	}
 
@@ -82,7 +82,7 @@ const annon = function annon( method ){
 		return false;
 	}
 
-	return ( fnamed( method ) === false );
+	return ( !fnamed( method ) || fnamed( method, "anonymous" ) );
 };
 
 module.exports = annon;
