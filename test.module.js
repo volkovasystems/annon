@@ -74,46 +74,6 @@ const path = require( "path" );
 
 describe( "annon", ( ) => {
 	
-	describe( "`annon( function( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) => {
-
-			assert.equal( annon( function( ){ } ), true );
-
-		} );
-	} );
-
-	describe( "`annon( function( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) => {
-
-			assert.equal( annon( ( ) => { } ), true );
-
-		} );
-	} );
-
-	describe( `"annon( "" )"`, ( ) => {
-	it( "should be equal to true", ( ) => {
-
-			assert.equal( annon( "" ), true );
-
-		} );
-	} );
-
-	describe( `"annon( function hello( ){ } )"`, ( ) => {
-	it( "should be equal to false", ( ) => {
-
-			assert.equal( annon( function hello( ){ } ), false );
-
-		} );
-	} );
-
-	describe( `"annon( "test" )"`, ( ) => {
-	it( "should be equal to false", ( ) => {
-
-			assert.equal( annon( "test" ), false );
-
-		} );
-	} );
-	
 } );
 
 
@@ -124,46 +84,7 @@ describe( "annon", ( ) => {
 
 describe( "annon", ( ) => {
 	
-	describe( "`annon( function( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) => {
 
-			assert.equal( annon( function( ){ } ), true );
-
-		} );
-	} );
-
-	describe( "`annon( function( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) => {
-
-			assert.equal( annon( ( ) => { } ), true );
-
-		} );
-	} );
-
-	describe( `"annon( "" )"`, ( ) => {
-	it( "should be equal to true", ( ) => {
-
-			assert.equal( annon( "" ), true );
-
-		} );
-	} );
-
-	describe( `"annon( function hello( ){ } )"`, ( ) => {
-	it( "should be equal to false", ( ) => {
-
-			assert.equal( annon( function hello( ){ } ), false );
-
-		} );
-	} );
-
-	describe( `"annon( "test" )"`, ( ) => {
-	it( "should be equal to false", ( ) => {
-
-			assert.equal( annon( "test" ), false );
-
-		} );
-	} );
-	
 } );
 
 
@@ -171,6 +92,12 @@ describe( "annon", ( ) => {
 
 
 //: @bridge:
+
+
+describe( "annon", ( ) => {
+	
+	
+} );
 
 
 
