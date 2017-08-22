@@ -56,7 +56,7 @@
 	@end-include
 */
 
-const assert = require( "assert" );
+const assert = require( "should" );
 
 //: @server:
 const annon = require( "./annon.js" );
@@ -73,33 +73,139 @@ const path = require( "path" );
 //: @server:
 
 describe( "annon", ( ) => {
-	
-} );
 
+	describe( "`annon( function( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( function( ){ } ), true );
+		} );
+	} );
+
+	describe( "`annon( ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( ( ) => { } ), true );
+		} );
+	} );
+
+	describe( "`annon( '' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( "" ), true );
+		} );
+	} );
+
+	describe( "`annon( function hello( ){ } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( function hello( ){ } ), false );
+		} );
+	} );
+
+	describe( "`annon( 'test' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( "test" ), false );
+		} );
+	} );
+
+} );
 
 //: @end-server
 
 
-//: @client: 
+//: @client:
 
 describe( "annon", ( ) => {
-	
+
+	describe( "`annon( function( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( function( ){ } ), true );
+		} );
+	} );
+
+	describe( "`annon( ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( ( ) => { } ), true );
+		} );
+	} );
+
+	describe( "`annon( '' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( "" ), true );
+		} );
+	} );
+
+	describe( "`annon( function hello( ){ } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( function hello( ){ } ), false );
+		} );
+	} );
+
+	describe( "`annon( 'test' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( "test" ), false );
+		} );
+	} );
 
 } );
-
 
 //: @end-client
 
 
 //: @bridge:
 
-
 describe( "annon", ( ) => {
-	
-	
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`annon( function( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					return annon( function( ){ } );
+
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`annon( ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return annon( ( ) => { } );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`annon( '' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( "" ), true );
+		} );
+	} );
+
+	describe( "`annon( function hello( ){ } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( function hello( ){ } ), false );
+		} );
+	} );
+
+	describe( "`annon( 'test' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( "test" ), false );
+		} );
+	} );
+
 } );
 
-
-
 //: @end-bridge
-
