@@ -190,19 +190,49 @@ describe( "annon", ( ) => {
 
 	describe( "`annon( '' )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			assert.equal( annon( "" ), true );
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return annon( "" );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
 		} );
 	} );
 
 	describe( "`annon( function hello( ){ } )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( annon( function hello( ){ } ), false );
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return annon( function hello( ){ } );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
 		} );
 	} );
 
 	describe( "`annon( 'test' )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( annon( "test" ), false );
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return annon( "test" );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
 		} );
 	} );
 
