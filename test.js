@@ -56,7 +56,7 @@
 	@end-include
 */
 
-const assert = require( "assert" );
+const assert = require( "should" );
 
 //: @server:
 const annon = require( "./annon.js" );
@@ -69,12 +69,40 @@ const annon = require( "./annon.js" );
 //: @server:
 
 describe( "annon", ( ) => {
-	
+
+	describe( "`annon( function( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( function( ){ } ), true );
+		} );
+	} );
+
+	describe( "`annon( ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( ( ) => { } ), true );
+		} );
+	} );
+
+	describe( "`annon( '' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( annon( "" ), true );
+		} );
+	} );
+
+	describe( "`annon( function hello( ){ } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( function hello( ){ } ), false );
+		} );
+	} );
+
+	describe( "`annon( 'test' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( annon( "test" ), false );
+		} );
+	} );
+
 } );
 
-
 //: @end-server
-
 
 
 
